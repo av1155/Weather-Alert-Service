@@ -1,0 +1,8 @@
+# .gitignore
+
+# Ignore specific text files with sensitive information
+account_sid.txt
+auth_token.txt
+api_key.txt
+my_phone_number.txt
+twilio_phone_number.txt
