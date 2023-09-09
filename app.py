@@ -20,21 +20,21 @@ def wind_speed_conversion(wind_speed):
 
 # Function to send weather alert via Twilio
 def send_weather_alert(weather_info):
-    account_sid = open("Weather_Alert_Service/account_sid.txt", "r").read()
-    auth_token = open("Weather_Alert_Service/auth_token.txt", "r").read()
+    account_sid = open("account_sid.txt", "r").read()
+    auth_token = open("auth_token.txt", "r").read()
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
         body=weather_info,
-        from_=open("Weather_Alert_Service/twilio_phone_number.txt", "r").read(),
-        to=open("Weather_Alert_Service/my_phone_number.txt", "r").read(),
+        from_=open("twilio_phone_number.txt", "r").read(),
+        to=open("my_phone_number.txt", "r").read(),
     )
 
 
 # Function to fetch weather information and send the alert
 def main():
     BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
-    API_KEY = open("Weather_Alert_Service/api_key.txt", "r").read()
+    API_KEY = open("api_key.txt", "r").read()
     CITY = "Coral Gables"
     URL = BASE_URL + "appid=" + API_KEY + "&q=" + CITY
 
