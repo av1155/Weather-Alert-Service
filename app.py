@@ -29,6 +29,7 @@ def send_weather_alert(weather_info):
         from_=open("twilio_phone_number.txt", "r").read(),
         to=open("my_phone_number.txt", "r").read(),
     )
+    print("Message Sent!")
 
 
 # Function to fetch weather information and send the alert
@@ -63,9 +64,9 @@ def main():
 
     weather_info = f"\nWeather in {CITY}:\n"
     weather_info += f" \n"
-    weather_info += f"Temperature: {temp_celsius:.2f}°C | {temp_fahrenheit:.2f}°F\n"
+    weather_info += f"Temperature: {temp_celsius:.0f}°C  |  {temp_fahrenheit:.0f}°F\n"
     weather_info += (
-        f"Feels Like: {feels_like_celsius:.2f}°C | {feels_like_fahrenheit:.2f}°F\n"
+        f"Feels Like: {feels_like_celsius:.0f}°C  |  {feels_like_fahrenheit:.0f}°F\n"
     )
     weather_info += f"Humidity: {humidity:.0f}%\n"
     weather_info += f"Weather: {clouds} ({clouds_description})\n"
